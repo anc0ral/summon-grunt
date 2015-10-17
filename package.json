@@ -1,0 +1,23 @@
+{
+
+	"//" : [
+		"Grabs the most up-to-date minor release of Grunt 0.4",
+		"Plugins are all the latest versions available",
+		"Syntax help [https://docs.npmjs.com/files/package.json#dependencies]"
+	],
+
+	"name" : "summon-grunt",
+	"version" : "0.0.1",
+
+	"devDependencies": {
+		"grunt" : "0.4.x",
+		"time-grunt" : "latest",
+		"load-grunt-config" : "latest",
+		"grunt-contrib-uglify" : "latest"
+	},
+
+	"dependencies" : {
+		"grunt-peon-gui" : "latest"
+	}
+
+}
