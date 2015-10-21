@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 	require('time-grunt')(grunt);
 
 	var object = {
+
 		path : require('path'),
 		current : process.cwd(),
 		grunt : 'grunt',
@@ -13,7 +14,8 @@ module.exports = function(grunt) {
 		get override() {
 			return this.grunt + '/Overridefolders.yaml'
 		}
-	}
+
+	};
 
 	require('load-grunt-config')(grunt, {
 
