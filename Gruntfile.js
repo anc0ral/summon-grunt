@@ -18,7 +18,8 @@ module.exports = function(grunt) {
 		configPath: [
 			path.join(current, gruntjs),
 			path.join(current, gruntjs + configuration),
-			path.join(current, gruntjs + override)
+			path.join(current, gruntjs + override),
+			path.join(current, gruntjs + override + configuration),
 		],
 
 		data: {
