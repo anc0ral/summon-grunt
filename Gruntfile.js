@@ -3,35 +3,43 @@ module.exports = function(grunt) {
 	// Automatically tracks time for each Grunt process
 	require('time-grunt')(grunt);
 
-	// Container
+	// JavaScript object was not used to contain the variables so they can be chained together easily
 	var path = require('path');
 	var current = process.cwd();
-	var gruntjs = 'grunt';
+	var gruntjs = 'grunt';	// Different to avoid namespace issues
 	var configuration = '/configuration';
-	var folders = '/folders.yaml';
 	var override = '/override';
+	var folders = '/folders.yaml';
 
 	require('load-grunt-config')(grunt, {
 
-		/* Makes use of the JIT Grunt plug-in’s default path for external files to load the custom tasks
-		   'overridePath' is being used to keep the configuration files seperate from the build tasks */
-		configPath: [
+		// Keeps the configuration files in a folder seperate from the build tasks
+		configPath : [
 			path.join(current, gruntjs),
-			path.join(current, gruntjs + configuration),
-			path.join(current, gruntjs + override),
-			path.join(current, gruntjs + override + configuration),
+			path.join(current, gruntjs + configuration)
 		],
 
-		data: {
-			folders: (function() {
+		// Checks the existence of an override folder & defines it
+		overridePath : (function() {
+			if (grunt.file.isDir(gruntjs + override)) {
+				[
+					path.join(current, gruntjs + override),
+					path.join(current, gruntjs + override + configuration)
+				]
+			}
+		})(),
 
+		data : {
+			folders : (function() {
+
+				// Looks for the 'folders.yaml' file in the override folder & includes a fallback when false
 				if (grunt.file.isFile(gruntjs + override + folders)) {
-					return grunt.file.readYAML(gruntjs + override + folders)
+					grunt.file.readYAML(gruntjs + override + folders)
 				} else {
-					return grunt.file.readYAML(gruntjs + configuration + folders)
+					grunt.file.readYAML(gruntjs + folders)
 				}
 
-			}())
+			})()
 		},
 
 		jitGrunt : {
