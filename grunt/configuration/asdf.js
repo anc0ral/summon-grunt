@@ -1,6 +1,6 @@
 module.exports = {
 
-        uglify: {
+        asdf: {
             src: 'src/*.js',
             dest: '<%= folders.build %>/jquery.js'
         }
