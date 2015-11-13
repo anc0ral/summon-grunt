@@ -1,6 +1,6 @@
 default:
   description: 'Default (production) build'
   tasks:
-    - postcss
-    - bake
-    - inlinecss
+    - 'postcss:dist'
+    - 'bake'
+    - 'inlinecss'

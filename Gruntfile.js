@@ -11,6 +11,17 @@ module.exports = function(grunt) {
 	var override = '/override';
 	var folders = '/folders.yaml';
 
+	// Checks for the existence of an override folder & defines it if found
+	if (grunt.file.isDir(gruntjs + override)) {
+
+		// Prints as 'undefined' whenever the if statement fails
+		var overridedir = [
+			path.join(current, gruntjs + override),
+			path.join(current, gruntjs + override + configuration)
+		]
+
+	};
+
 	require('load-grunt-config')(grunt, {
 
 		// Keeps the configuration files in a folder seperate from the build tasks
@@ -19,15 +30,7 @@ module.exports = function(grunt) {
 			path.join(current, gruntjs + configuration)
 		],
 
-		// Checks the existence of an override folder & defines it
-		overridePath : (function() {
-			if (grunt.file.isDir(gruntjs + override)) {
-				[
-					path.join(current, gruntjs + override),
-					path.join(current, gruntjs + override + configuration)
-				]
-			}
-		})(),
+		overridePath : overridedir,
 
 		data : {
 			folders : (function() {

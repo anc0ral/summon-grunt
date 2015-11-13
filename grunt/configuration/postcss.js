@@ -1,11 +1,10 @@
 module.exports = {
-    postcss: {
-        options: {
-            processors: [
-                require('precss')()
-            ]
-        },
-
+    options: {
+        processors: [
+            require('precss')()
+        ]
+    },
+    dist: {
         src: 'src/styles.css',
         dest: 'dest/styles.css'
     }
