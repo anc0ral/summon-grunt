@@ -18,7 +18,7 @@ module.exports =
 
 		files : [
 			expand : true
-			cwd : '<%= folders.source_files %>'
+			cwd : '<%= folders.styles_source_files %>'
 
 			src : [
 				'*'
@@ -49,7 +49,7 @@ module.exports =
 
 		files : [
 			expand : true
-			cwd : '<%= folders.source_files %>'
+			cwd : '<%= folders.styles_source_files %>'
 			src : 'emails.*'
 			dest : '<%= folders.stylesheets %>'
 		]

@@ -1,6 +1,6 @@
-default:
-  description: 'Default (production) build'
-  tasks:
-    - 'postcss:compile_styles'
-    - 'bake'
-    - 'inlinecss'
+default :
+    description : 'Default (production) build'
+    tasks :
+        - 'postcss:compile_emails'
+        - 'bake'
+        - 'inlinecss'

@@ -1,2 +1,6 @@
-source_files : 'stylesheets/source_files/'
+styles_source_files : 'stylesheets/source_files/'
 stylesheets : 'stylesheets/'
+templates : 'templates/'
+emails_source_files : 'templates/emails/source_files/'
+temporary : 'templates/emails/source_files/temporary/'
+emails : 'templates/emails/'
