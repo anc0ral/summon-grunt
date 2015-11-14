@@ -4,13 +4,9 @@ module.exports =
 		options :
 			removeStyleTags : false
 			applyWidthAttributes : true
-			applyHeightAttributes : true
 			applyAttributesTableElements : true
 			webResources :
 				images : false
-
-			xmlMode : true
-			preserveImportant : true
 
 		files : [
 			expand : true
