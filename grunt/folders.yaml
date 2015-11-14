@@ -1,2 +1,2 @@
-grunt: 'grunt'
-build: 'build'
+source_files : 'stylesheets/source_files/'
+stylesheets : 'stylesheets/'
