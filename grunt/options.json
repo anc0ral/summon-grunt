@@ -1,0 +1,9 @@
+{
+
+	"//" : [
+		"# Fixes the 'grunt gui' command"
+	],
+
+    "gui" : "grunt-peon-gui",
+    "inlinecss" : "grunt-inline-css"
+}

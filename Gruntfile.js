@@ -48,11 +48,7 @@ module.exports = function(grunt) {
 		jitGrunt : {
 
 			// Sometimes automatic mapping of Grunt configurations to their plugins fail, this can be rectified by manually matching them below
-			staticMappings : {
-
-				gui : 'grunt-peon-gui',	// Fixes the 'grunt gui' command
-				inlinecss : 'grunt-inline-css'
-			}
+			staticMappings : grunt.file.readJSON(gruntjs + '/options.json')
 		}
 
 	})
